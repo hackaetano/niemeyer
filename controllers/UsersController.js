@@ -38,7 +38,7 @@ class UsersController {
     }
 
     getAll(req, res, next) {
-        let query = this._handleGetQuery(req.query);
+        let query = _handleGetQuery(req.query);
 
         this.model.findAsync(query)
         .then(data => {
