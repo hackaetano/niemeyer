@@ -1,5 +1,6 @@
 {
     "local": {
+        "cors": [],
         "domain": "http://localhost:8080",
         "mongo": {
             "username": "",
@@ -10,6 +11,7 @@
         }
     },
     "production": {
+        "cors": [],
         "domain": "https://niemeyer.hackaetano.com",
         "mongo": {
             "username": "",

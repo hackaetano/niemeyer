@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+const enableCors = require('../middlewares/enableCors');
+const isAuthenticated = require('../middlewares/isAuthenticated');
+
 const mongoose = require('../db/mongoose');
 const Model = require('../models/UsersModel')(mongoose);
 const Users = require('../controllers/UsersController')(Model);

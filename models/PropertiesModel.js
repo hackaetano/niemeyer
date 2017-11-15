@@ -90,7 +90,7 @@ module.exports = function(mongoose) {
                 rooms: Number,
                 suites: Number,
                 bathrooms: Number,
-                kitchens: Number,
+                kitchens: Boolean,
                 serviceArea: Boolean,
                 parkingSpace: Number
             },
