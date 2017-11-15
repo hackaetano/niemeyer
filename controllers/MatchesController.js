@@ -45,6 +45,7 @@ class MatchesController {
         .then(this.parseUser)
         .then(this.buildQuery)
         .then(query => {
+            console.log(query);
             this.property.findAsync(query)
             .then(data => {
                 let response = {};
@@ -65,7 +66,6 @@ class MatchesController {
         let userToMatch = {};
         userToMatch.location = data.preferences.neighborhood.settings.district[0];
         userToMatch.children = data.familiar.children.has;
-        userToMatch.children = data.familiar.children.has;
         userToMatch.income = data.personal.income;
 
         return userToMatch;
@@ -79,21 +79,27 @@ class MatchesController {
 
         query.location = {};
 
-        if (data.children > 0) {
+        if (data.children) {
             query.features.essencials.rooms = {
                 $gt: 1
             }
+        } else {
+            delete query.features;
         }
 
         if (data.district) {
             query.location.district = new RegExp(data.district, 'gi');
+        } else {
+            delete query.location;
         }
 
         if (data.income) {
-            query.characteristics.princing = {};
-            query.characteristics.princing.rent = {
+            query.characteristics.pricing = {};
+            query.characteristics.pricing.rent = {
                 $lt: data.income * 0.4
             }
+        } else {
+            delete  query.characteristics
         }
 
         return query;
