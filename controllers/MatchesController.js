@@ -73,33 +73,21 @@ class MatchesController {
 
     buildQuery(data) {
         let query = {};
-        query.features = {};
-        query.features.essencials = {};
-        query.characteristics = {};
-
-        query.location = {};
 
         if (data.children) {
-            query.features.essencials.rooms = {
+            query['features.essencials.rooms'] = {
                 $gt: 1
             }
-        } else {
-            delete query.features;
         }
 
         if (data.district) {
-            query.location.district = new RegExp(data.district, 'gi');
-        } else {
-            delete query.location;
+            query['location.district'] = new RegExp(data.district, 'gi');
         }
 
         if (data.income) {
-            query.characteristics.pricing = {};
-            query.characteristics.pricing.rent = {
+            query['characteristics.pricing.rent'] = {
                 $lt: data.income * 0.4
             }
-        } else {
-            delete  query.characteristics
         }
 
         return query;
