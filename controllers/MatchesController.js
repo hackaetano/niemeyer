@@ -89,8 +89,6 @@ class MatchesController {
             query.location.district = new RegExp(data.district, 'gi');
         }
 
-        query.characteristics.categories = new RegExp('ALUGUEL', 'gi');
-
         if (data.income) {
             query.characteristics.princing = {};
             query.characteristics.princing.rent = {
