@@ -5,6 +5,7 @@
   "main": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
+    "deploy": "node_modules/shipit-cli/bin/shipit production deploy",
     "forever": "forever --watch ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

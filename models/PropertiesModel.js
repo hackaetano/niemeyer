@@ -63,6 +63,7 @@ module.exports = function(mongoose) {
             description: String,
             categories: [String],
             propertyType: String,
+            images: [String],
             area: Number,
             pricing: {
                 purchase: Number,

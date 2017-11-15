@@ -8,5 +8,15 @@
             "port": "27017",
             "database": "niemeyer"
         }
+    },
+    "production": {
+        "domain": "https://niemeyer.hackaetano.com",
+        "mongo": {
+            "username": "",
+            "password": "",
+            "server": "localhost",
+            "port": "27017",
+            "database": "niemeyer_prod"
+        }
     }
 }
