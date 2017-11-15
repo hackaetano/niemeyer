@@ -11,13 +11,36 @@ function handleNotFound(data) {
     return data;
 }
 
+function _handleGetQuery(query) {
+    var prop,
+    findAllQuery = {},
+    between = query.between;
+
+    if (between) {
+        between = between.split(',');
+        findAllQuery["createdAt"] = {
+            $gte: new Date(between[0]),
+            $lt: new Date(between[1])
+        }
+        delete query.between;
+    }
+
+    for(prop in query) {
+        query[prop] = new RegExp(query[prop], 'gi');
+    }
+
+    return Object.assign(findAllQuery, query);
+};
+
 class UsersController {
     constructor(model) {
         this.model = Promise.promisifyAll(model);
     }
 
     getAll(req, res, next) {
-        this.model.findAsync()
+        let query = this._handleGetQuery(req.query);
+
+        this.model.findAsync(query)
         .then(data => {
             res.json(data);
         })
