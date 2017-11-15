@@ -81,7 +81,7 @@ class MatchesController {
         }
 
         if (data.district) {
-            query['location.district'] = new RegExp(data.district, 'gi');
+            query['location.district'] = new RegExp(data.location, 'gi');
         }
 
         if (data.income) {
