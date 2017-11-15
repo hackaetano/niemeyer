@@ -1,0 +1,12 @@
+{
+    "local": {
+        "domain": "http://localhost:8080",
+        "mongo": {
+            "username": "",
+            "password": "",
+            "server": "localhost",
+            "port": "27017",
+            "database": "niemeyer"
+        }
+    }
+}

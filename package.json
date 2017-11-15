@@ -1,0 +1,30 @@
+{
+  "name": "niemeyer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "forever": "forever --watch ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackaetano/niemeyer"
+  },
+  "author": "Hackaetano Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hackaetano/niemeyer/issues"
+  },
+  "homepage": "https://niemeyer.hackaetano.com/",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.2",
+    "shipit-cli": "^3.0.0",
+    "shipit-deploy": "^2.5.1",
+    "unirest": "^0.5.1"
+  }
+}
