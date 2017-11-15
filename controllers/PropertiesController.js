@@ -43,7 +43,11 @@ class PropertiesController {
         
         this.model.findAsync(query)
         .then(data => {
-            res.json(data);
+            let response = {};
+            response.length = data.length;
+            response.results = data;
+            
+            res.json(response);
         })
         .catch(next);
     }
