@@ -100,7 +100,8 @@ module.exports = function(mongoose) {
                 rent: Number,
                 condominium: Number,
                 tax: Number
-            }
+            },
+            pricePerArea: Number
         },
         location: {
             zipcode: String,
